@@ -1,6 +1,0 @@
-name: HealCommand
-author: SwagBoy47
-version: 1.0
-api: [1.0.0]
-load: POSTWORLD
-main: swagking47\Healcommand
