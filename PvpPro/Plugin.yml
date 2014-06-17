@@ -3,5 +3,5 @@ main: shoghicp\
 version: 1.1.0
 api: 1.0.0
 author: shoghicp
-description: Allows placing colors or images in the grass
-website: http://github.com/shoghicp/PaintMyLawn
+description: a plugin to control PVP
+website: https://github.com/swagking47/1.0.0-plugins/tree/master/PvpPro
