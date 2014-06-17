@@ -1,7 +1,13 @@
 name: PvpPro
-main: shoghicp\
+main: swagking\PvpPro\Main
 version: 1.1.0
 api: 1.0.0
-author: shoghicp
+author: Swagking47
 description: a plugin to control PVP
 website: https://github.com/swagking47/1.0.0-plugins/tree/master/PvpPro
+
+commands:
+ PVP:
+  description: "to set the PVP mode"
+  usage: "/PVPpro ON or OFF"
+  permission: PVPpro.command.PVPpro
