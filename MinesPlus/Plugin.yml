@@ -1,1 +1,15 @@
-name
+name: MinesPlus
+main: MinesPlus\Main
+version: 1
+api: [1.0.0]
+
+load: POSTWORLD
+authors: [Swagboy47]
+description: a usfull and fun plugin
+
+commands:
+    minesplus:
+        desctiption: "to change the mines settings"
+        usage: "/minesplus <fire|heal|attak|kill|kick|sendmassage|armor1|armor2|armor3|armor4|teleport|item|void|high> <ENABLE|DISABLE|SECONDS|BLOCK|AMOUNT|REASON|MASSAGE|XYZ>"
+        aiases: [mp]
+        
