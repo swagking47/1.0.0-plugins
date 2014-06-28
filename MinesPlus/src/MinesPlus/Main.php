@@ -31,20 +31,29 @@ class Main extends PluginBase implements Listener{
  private $sendMessage;
  private $true8;
  private $mine8;
- private $armor;
+ private $armor1;
  private $true9;
  private $mine9;
+ private $armor2;
+ private $true10;
+ private $mine10;
+ private $armor3;
+ private $true11;
+ private $mine11;
+ private $armor4;
+ private $true12;
+ private $mine12;
  private $x;
  private $y; 
  private $z;
- private $true10;
- private $mine10;
+ private $true13;
+ private $mine13;
  private $item
- private $true11;
- private $mine11;
+ private $true14;
+ private $mine14;
  private $void;
- private $true12;
- private $mine12;
+ private $true15;
+ private $mine15;
  private $high;
  public function onLoad(){
  $this->getLogger()->info("MinesPlus have been loaded!");
@@ -71,8 +80,18 @@ class Main extends PluginBase implements Listener{
         $this->sendMessage = $config->get("sendMessage");
         $this->true8 = $config->get("true8");
         $this->mine8 = $config->get("mine8");
-        $this->armor = $config->get("armor");
-        
+        $this->armor1 = $config->get("armor1");
+        $this->true9 = $config->get("true9");
+        $this->mine9 = $config->get("mine9");
+        $this->armor2 = $config->get("armor2");
+        $this->true10 = $config->get("true10");
+        $this->mine10 = $config->get("mine10");
+        $this->armor3 = $config->get("armor3");
+        $this->true11 = $config->get("true11");
+        $this->mine11 = $config->get("mine11");
+        $this->armor4 = $config->get("armor4");
+        $this->true12 = $config->get("true12");
+        $this->mine12 = $config->get("mine12");
         $this->x = $config->get("x");
         $this->y = $config->get("y");
         $this->z = $config->get("z");
@@ -95,11 +114,17 @@ class Main extends PluginBase implements Listener{
 				 $sender->sendMessage("Usage: /mp fire <ENABLE|DISABLE|SECONDS|BLOCK>");
 				 }
 			 if($args[1] == "enable"){
+			 	if($this->true1 == "true"){
+			 	      $sender->sendMessage("[MinesPlus] fire mines already been enabled!");	
+			 	}
 			  $config->set("true1", "true");
 			  $config->save();
       $sender->sendMessage("[MinesPlus] fire mines have been enabled!");
  }
  if($args[1] == "disable"){
+ 	if($this->true1 == "false"){
+ 		$sender->sendMessage("[MinesPlus] fire mines already been disabled!");
+ 	}
   $config->set("true1", "false");
 			  $config->save();
       $sender->sendMessage("[MinesPlus] fire mines have been disabled!");
@@ -109,7 +134,7 @@ class Main extends PluginBase implements Listener{
  $sender->sendMessage("Usage: /mp fire block <ID>");
  }
  else {
-  $config->set("mine1", "$args[2]");
+  $config->set("mine1", $args[2]);
   $config->save();
   }
   }
@@ -118,7 +143,7 @@ class Main extends PluginBase implements Listener{
  $sender->sendMessage("Usage: /mp fire seconds <seconds>");
  }
  else {
-  $config->set("fire", "$args[2]");
+  $config->set("fire", $args[2]);
   $config->save();
   }
   }
@@ -128,11 +153,17 @@ class Main extends PluginBase implements Listener{
 				 $sender->sendMessage("Usage: /mp fire <ENABLE|DISABLE|AMOUNT|BLOCK>");
 				 }
 			 if($args[1] == "enable"){
+			 	if($this->true1 == "true"){
+			 	      $sender->sendMessage("[MinesPlus] heal mines already been enabled!");	
+			 	}
 			  $config->set("true2", "true");
 			  $config->save();
       $sender->sendMessage("[MinesPlus] healing mines have been enabled!");
  }
  if($args[1] == "disable"){
+ 	if($this->true1 == "false"){
+			 	      $sender->sendMessage("[MinesPlus] heal mines already been disabled!");	
+			 	}
   $config->set("true2", "false");
 			  $config->save();
       $sender->sendMessage("[MinesPlus] healing mines have been disabled!");
@@ -142,7 +173,7 @@ class Main extends PluginBase implements Listener{
  $sender->sendMessage("Usage: /mp healing block <ID>");
  }
  else {
-  $config->set("mine2", "$args[2]");
+  $config->set("mine2", $args[2]);
   $config->save();
   }
   }
@@ -151,7 +182,7 @@ class Main extends PluginBase implements Listener{
  $sender->sendMessage("Usage: /mp healing amount <amount>");
  }
  else {
-  $config->set("heal", "$args[2]");
+  $config->set("heal", $args[2]);
   $config->save();
   }
   }
@@ -161,11 +192,17 @@ class Main extends PluginBase implements Listener{
 				 $sender->sendMessage("Usage: /mp attak <ENABLE|DISABLE|AMOUNT|BLOCK>");
 				 }
 			 if($args[1] == "enable"){
+			 	if($this->true1 == "true"){
+			 	      $sender->sendMessage("[MinesPlus] attak mines already been enabled!");	
+			 	}
 			  $config->set("true3", "true");
 			  $config->save();
       $sender->sendMessage("[MinesPlus] attak mines have been enabled!");
  }
  if($args[1] == "disable"){
+ 	if($this->true1 == "false"){
+			 	      $sender->sendMessage("[MinesPlus] attak mines already been disabled!");	
+			 	}
   $config->set("true3", "false");
 			  $config->save();
       $sender->sendMessage("[MinesPlus] attak mines have been disabled!");
@@ -175,7 +212,7 @@ class Main extends PluginBase implements Listener{
  $sender->sendMessage("Usage: /mp attak block <ID>");
  }
  else {
-  $config->set("mine3", "$args[2]");
+  $config->set("mine3", $args[2]);
   $config->save();
   }
   }
@@ -184,7 +221,7 @@ class Main extends PluginBase implements Listener{
  $sender->sendMessage("Usage: /mp attak amount <seconds>");
  }
  else {
-  $config->set("attak", "$args[2]");
+  $config->set("attak", $args[2]);
   $config->save();
   }
   }
@@ -194,11 +231,20 @@ class Main extends PluginBase implements Listener{
 				 $sender->sendMessage("Usage: /mp kill <ENABLE|DISABLE|BLOCK>");
 				 }
 			 if($args[1] == "enable"){
+			 	if($this->true1 == "true"){
+			 	      $sender->sendMessage("[MinesPlus] kill mines already been enabled!");	
+			 	}
+			 	if($this->true1 == "true"){
+			 	      $sender->sendMessage("[MinesPlus] kill mines already been disabled!");	
+			 	}
 			  $config->set("true5", "true");
 			  $config->save();
       $sender->sendMessage("[MinesPlus] kill mines have been enabled!");
  }
  if($args[1] == "disable"){
+ 	if($this->true1 == "false"){
+			 	      $sender->sendMessage("[MinesPlus] fire mines already been disabled!");	
+			 	}
   $config->set("true5", "false");
 			  $config->save();
       $sender->sendMessage("[MinesPlus] kill mines have been disabled!");
@@ -208,7 +254,7 @@ class Main extends PluginBase implements Listener{
  $sender->sendMessage("Usage: /mp kill block <ID>");
  }
  else {
-  $config->set("mine5", "$args[2]");
+  $config->set("mine5", $args[2]);
   $config->save();
   }
   }
@@ -218,11 +264,17 @@ class Main extends PluginBase implements Listener{
 				 $sender->sendMessage("Usage: /mp kick <ENABLE|DISABLE|REASON|BLOCK>");
 				 }
 			 if($args[1] == "enable"){
+			 	if($this->true1 == "true"){
+			 	      $sender->sendMessage("[MinesPlus] kick mines already been disabled!");	
+			 	}
 			  $config->set("true6", "true");
 			  $config->save();
       $sender->sendMessage("[MinesPlus] kick mines have been enabled!");
  }
  if($args[1] == "disable"){
+ 	if($this->true1 == "false"){
+			 	      $sender->sendMessage("[MinesPlus] kick mines already been disabled!");	
+			 	}
   $config->set("true6", "false");
 			  $config->save();
       $sender->sendMessage("[MinesPlus] kick mines have been disabled!");
@@ -232,7 +284,7 @@ class Main extends PluginBase implements Listener{
  $sender->sendMessage("Usage: /mp kick block <ID>");
  }
  else {
-  $config->set("mine6", "$args[2]");
+  $config->set("mine6", $args[2]);
   $config->save();
   }
   }
@@ -241,7 +293,7 @@ class Main extends PluginBase implements Listener{
  $sender->sendMessage("Usage: /mp kick seconds <seconds>");
  }
  else {
-  $config->set("kick", "$args[2]");
+  $config->set("kick", $args[2]);
   $config->save();
   }
   }
@@ -251,11 +303,17 @@ class Main extends PluginBase implements Listener{
 				 $sender->sendMessage("Usage: /mp sendmassage <ENABLE|DISABLE|MASSAGE|BLOCK>");
 				 }
 			 if($args[1] == "enable"){
+			 	if($this->true1 == "true"){
+			 	      $sender->sendMessage("[MinesPlus] sendmassage mines already been enabled!");	
+			 	}
 			  $config->set("true7", "true");
 			  $config->save();
       $sender->sendMessage("[MinesPlus] sendmassage mines have been enabled!");
  }
  if($args[1] == "disable"){
+ 	if($this->true1 == "false"){
+			 	      $sender->sendMessage("[MinesPlus] fire mines already been enabled!");	
+			 	}
   $config->set("true7", "false");
 			  $config->save();
       $sender->sendMessage("[MinesPlus] sendmassage mines have been disabled!");
@@ -265,7 +323,7 @@ class Main extends PluginBase implements Listener{
  $sender->sendMessage("Usage: /mp massage block <ID>");
  }
  else {
-  $config->set("mine7", "$args[2]");
+  $config->set("mine7", $args[2]);
   $config->save();
   }
   }
@@ -274,13 +332,13 @@ class Main extends PluginBase implements Listener{
  $sender->sendMessage("Usage: /mp sendmassage massege <massage>");
  }
  else {
-  $config->set("sendMassage", "$args[2]");
+  $config->set("sendMassage", $args[2]);
   $config->save();
   }
   }
   }
   
-  //it's not done yet :)
+  //it's not done :)
   
  
  
