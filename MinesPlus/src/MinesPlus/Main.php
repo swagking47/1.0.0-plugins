@@ -80,16 +80,12 @@ class Main extends PluginBase implements Listener{
         $this->sendMessage = $config->get("sendMessage");
         $this->true8 = $config->get("true8");
         $this->mine8 = $config->get("mine8");
-        $this->armor1 = $config->get("armor1");
         $this->true9 = $config->get("true9");
         $this->mine9 = $config->get("mine9");
-        $this->armor2 = $config->get("armor2");
         $this->true10 = $config->get("true10");
         $this->mine10 = $config->get("mine10");
-        $this->armor3 = $config->get("armor3");
         $this->true11 = $config->get("true11");
         $this->mine11 = $config->get("mine11");
-        $this->armor4 = $config->get("armor4");
         $this->true12 = $config->get("true12");
         $this->mine12 = $config->get("mine12");
         $this->x = $config->get("x");
@@ -100,7 +96,6 @@ class Main extends PluginBase implements Listener{
         $this->item = $config->get("item");
         $this->true14 = $config->get("true14");
         $this->mine14 = $config->get("mine14");
-        $this->void = $config->get("void");
         $this->true15 = $config->get("true15");
         $this->mine15 = $config->get("mine15");
         $this->high = $config->get("high");
