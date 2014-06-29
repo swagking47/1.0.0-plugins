@@ -5,6 +5,8 @@
 namespace StepForArmor;
 
 use pocketmine\event\entity\EntityMoveEvent;
+use pocketmine\command\Command;
+use pocketmine\command\CommandSender;
 use pocketmine\event\Listener;
 use pocketmine\level;
 use pocketmine\player
@@ -72,6 +74,8 @@ class Main extends PluginBase implements Listener{
       $this->getLogger()->info("[StepForArmor] has been loaded.");
     }
      public function onEnable() {
+     	$this->saveDefaultConfig();
+     	 $this->getResource("config.yml");
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $config = $this->getConfig();
         $this->laggings = $config->get("Laggings");
@@ -218,3 +222,103 @@ $player->getInventory()->setLeggings(Item::get($this->laggings10));
 $player->getInventory()->setBoots(Item::get($this->boots10));
 $player->getInventory()->sendArmorContents($player);
 }
+    }
+     }
+public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
+      	switch($cmd->getName()){
+			case "stepforarmor":
+if($args[0] == "1" and  $sender->hasPermission("stepforarmor.set")){
+$this->getConfig()->set("helmet", $args[1]);
+$this->getConfig()->set("chestplate", $args[2]);
+$this->getConfig()->set("laggings", $args[3]);
+$this->getConfig()->set("boots", $args[4]);
+$this->getConfig()->set("block", $args[5]);
+$this->getConfig()->save();
+}
+if($args[0] == "2" and  $sender->hasPermission("stepforarmor.set")){
+$this->getConfig()->set("helmet1", $args[1]);
+$this->getConfig()->set("chestplate1", $args[2]);
+$this->getConfig()->set("laggings1", $args[3]);
+$this->getConfig()->set("boots1", $args[4]);
+$this->getConfig()->set("block1", $args[5]);
+$this->getConfig()->save();
+}
+if($args[0] == "3" and  $sender->hasPermission("stepforarmor.set")){
+$this->getConfig()->set("helmet2", $args[1]);
+$this->getConfig()->set("chestplate2", $args[2]);
+$this->getConfig()->set("laggings2", $args[3]);
+$this->getConfig()->set("boots2", $args[4]);
+$this->getConfig()->set("block2", $args[5]);
+$this->getConfig()->save();
+}
+if($args[0] == "4" and  $sender->hasPermission("stepforarmor.set")){
+$this->getConfig()->set("helmet3", $args[1]);
+$this->getConfig()->set("chestplate3", $args[2]);
+$this->getConfig()->set("laggings3", $args[3]);
+$this->getConfig()->set("boots3", $args[4]);
+$this->getConfig()->set("block3", $args[5]);
+$this->getConfig()->save();
+}
+if($args[0] == "5" and  $sender->hasPermission("stepforarmor.set")){
+$this->getConfig()->set("helmet4", $args[1]);
+$this->getConfig()->set("chestplate4", $args[2]);
+$this->getConfig()->set("laggings4", $args[3]);
+$this->getConfig()->set("boots4", $args[4]);
+$this->getConfig()->set("block4", $args[5]);
+$this->getConfig()->save();
+}
+if($args[0] == "6" and  $sender->hasPermission("stepforarmor.set")){
+$this->getConfig()->set("helmet5", $args[1]);
+$this->getConfig()->set("chestplate5", $args[2]);
+$this->getConfig()->set("laggings5", $args[3]);
+$this->getConfig()->set("boots5", $args[4]);
+$this->getConfig()->set("block5", $args[5]);
+$this->getConfig()->save();
+}
+if($args[0] == "7" and  $sender->hasPermission("stepforarmor.set")){
+$this->getConfig()->set("helmet6", $args[1]);
+$this->getConfig()->set("chestplate6", $args[2]);
+$this->getConfig()->set("laggings6", $args[3]);
+$this->getConfig()->set("boots6", $args[4]);
+$this->getConfig()->set("block6", $args[5]);
+$this->getConfig()->save();
+}
+if($args[0] == "8" and  $sender->hasPermission("stepforarmor.set")){
+$this->getConfig()->set("helmet7", $args[1]);
+$this->getConfig()->set("chestplate7", $args[2]);
+$this->getConfig()->set("laggings7", $args[3]);
+$this->getConfig()->set("boots7", $args[4]);
+$this->getConfig()->set("block7", $args[5]);
+$this->getConfig()->save();
+}
+if($args[0] == "9" and  $sender->hasPermission("stepforarmor.set")){
+$this->getConfig()->set("helmet8", $args[1]);
+$this->getConfig()->set("chestplate8", $args[2]);
+$this->getConfig()->set("laggings8", $args[3]);
+$this->getConfig()->set("boots8", $args[4]);
+$this->getConfig()->set("block8", $args[5]);
+$this->getConfig()->save();
+}
+if($args[0] == "10" and  $sender->hasPermission("stepforarmor.set")){
+$this->getConfig()->set("helmet9", $args[1]);
+$this->getConfig()->set("chestplate9", $args[2]);
+$this->getConfig()->set("laggings9", $args[3]);
+$this->getConfig()->set("boots9", $args[4]);
+$this->getConfig()->set("block9", $args[5]);
+$this->getConfig()->save();
+}
+if($args[0] == "11" and  $sender->hasPermission("stepforarmor.set")){
+$this->getConfig()->set("helmet10", $args[1]);
+$this->getConfig()->set("chestplate10", $args[2]);
+$this->getConfig()->set("laggings10", $args[3]);
+$this->getConfig()->set("boots10", $args[4]);
+$this->getConfig()->set("block10", $args[5]);
+$this->getConfig()->save();
+}
+}
+}
+ public function onDisable(){
+        $this->getLogger()->log("[StepForArmor] StepForArmor Unloaded!");
+    }
+}
+?>
