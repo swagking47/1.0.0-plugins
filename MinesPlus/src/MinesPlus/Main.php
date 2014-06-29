@@ -15,9 +15,6 @@ class Main extends PluginBase implements Listener{
  private $true1;
  private $mine1;
  private $fire;
- private $true2;
- private $mine2;
- private $heal;
  private $true3;
  private $mine3;
  private $attak;
@@ -26,29 +23,6 @@ class Main extends PluginBase implements Listener{
  private $true6;
  private $mine6;
  private $kick;
- private $true7;
- private $mine7;
- private $sendMessage;
- private $true8;
- private $mine8;
- private $armor1;
- private $true9;
- private $mine9;
- private $armor2;
- private $true10;
- private $mine10;
- private $armor3;
- private $true11;
- private $mine11;
- private $armor4;
- private $true12;
- private $mine12;
- private $x;
- private $y; 
- private $z;
- private $true13;
- private $mine13;
- private $item
  private $true14;
  private $mine14;
  private $void;
@@ -64,9 +38,6 @@ class Main extends PluginBase implements Listener{
         $this->true1 = $config->get("true1");
         $this->mine1 = $config->get("mine1");
         $this->fire = $config->get("fire");
-        $this->true2 = $config->get("true2");
-        $this->mine2 = $config->get("mine2");
-        $this->heal = $config->get("heal");
         $this->true3 = $config->get("true3");
         $this->mine3 = $config->get("mine3");
         $this->attak = $config->get("attak");
@@ -75,25 +46,6 @@ class Main extends PluginBase implements Listener{
         $this->true6 = $config->get("true6");
         $this->mine6 = $config->get("mine6");
         $this->kick = $config->get("kick");
-        $this->true7 = $config->get("true7");
-        $this->mine7 = $config->get("mine7");
-        $this->sendMessage = $config->get("sendMessage");
-        $this->true8 = $config->get("true8");
-        $this->mine8 = $config->get("mine8");
-        $this->true9 = $config->get("true9");
-        $this->mine9 = $config->get("mine9");
-        $this->true10 = $config->get("true10");
-        $this->mine10 = $config->get("mine10");
-        $this->true11 = $config->get("true11");
-        $this->mine11 = $config->get("mine11");
-        $this->true12 = $config->get("true12");
-        $this->mine12 = $config->get("mine12");
-        $this->x = $config->get("x");
-        $this->y = $config->get("y");
-        $this->z = $config->get("z");
-        $this->true13 = $config->get("true13");
-        $this->mine13 = $config->get("mine13");
-        $this->item = $config->get("item");
         $this->true14 = $config->get("true14");
         $this->mine14 = $config->get("mine14");
         $this->true15 = $config->get("true15");
@@ -143,45 +95,7 @@ class Main extends PluginBase implements Listener{
   }
   }
   }
-  				if($args[0] == "heal"){
-				if($args[1] == ""){
-				 $sender->sendMessage("Usage: /mp fire <ENABLE|DISABLE|AMOUNT|BLOCK>");
-				 }
-			 if($args[1] == "enable"){
-			 	if($this->true1 == "true"){
-			 	      $sender->sendMessage("[MinesPlus] heal mines already been enabled!");	
-			 	}
-			  $config->set("true2", "true");
-			  $config->save();
-      $sender->sendMessage("[MinesPlus] healing mines have been enabled!");
- }
- if($args[1] == "disable"){
- 	if($this->true1 == "false"){
-			 	      $sender->sendMessage("[MinesPlus] heal mines already been disabled!");	
-			 	}
-  $config->set("true2", "false");
-			  $config->save();
-      $sender->sendMessage("[MinesPlus] healing mines have been disabled!");
- }
- if($args[1] == "block"){
- if($args[2] == ""){
- $sender->sendMessage("Usage: /mp healing block <ID>");
- }
- else {
-  $config->set("mine2", $args[2]);
-  $config->save();
-  }
-  }
-  if($args[1] == "amount"){
- if($args[2] == ""){
- $sender->sendMessage("Usage: /mp healing amount <amount>");
- }
- else {
-  $config->set("heal", $args[2]);
-  $config->save();
-  }
-  }
-  }
+  			
   				if($args[0] == "attak"){
 				if($args[1] == ""){
 				 $sender->sendMessage("Usage: /mp attak <ENABLE|DISABLE|AMOUNT|BLOCK>");
@@ -293,47 +207,39 @@ class Main extends PluginBase implements Listener{
   }
   }
   }
-  				if($args[0] == "sendmassage"){
+  				
+  if($args[0] == "void"){
 				if($args[1] == ""){
-				 $sender->sendMessage("Usage: /mp sendmassage <ENABLE|DISABLE|MASSAGE|BLOCK>");
+				 $sender->sendMessage("Usage: /mp void <ENABLE|DISABLE|BLOCK>");
 				 }
 			 if($args[1] == "enable"){
 			 	if($this->true1 == "true"){
-			 	      $sender->sendMessage("[MinesPlus] sendmassage mines already been enabled!");	
+			 	      $sender->sendMessage("[MinesPlus] void mines already been enabled!");	
 			 	}
-			  $config->set("true7", "true");
+			  $config->set("true1", "true");
 			  $config->save();
-      $sender->sendMessage("[MinesPlus] sendmassage mines have been enabled!");
+      $sender->sendMessage("[MinesPlus] void mines have been enabled!");
  }
  if($args[1] == "disable"){
  	if($this->true1 == "false"){
-			 	      $sender->sendMessage("[MinesPlus] fire mines already been enabled!");	
-			 	}
-  $config->set("true7", "false");
+ 		$sender->sendMessage("[MinesPlus] void mines already been disabled!");
+ 	}
+  $config->set("true1", "false");
 			  $config->save();
-      $sender->sendMessage("[MinesPlus] sendmassage mines have been disabled!");
+      $sender->sendMessage("[MinesPlus] void mines have been disabled!");
  }
  if($args[1] == "block"){
  if($args[2] == ""){
- $sender->sendMessage("Usage: /mp massage block <ID>");
+ $sender->sendMessage("Usage: /mp void block <ID>");
  }
  else {
-  $config->set("mine7", $args[2]);
-  $config->save();
-  }
-  }
-  if($args[1] == "massage"){
- if($args[2] == ""){
- $sender->sendMessage("Usage: /mp sendmassage massege <massage>");
- }
- else {
-  $config->set("sendMassage", $args[2]);
+  $config->set("mine1", $args[2]);
   $config->save();
   }
   }
   }
   
-  //it's not done :)
+
   
  
  
