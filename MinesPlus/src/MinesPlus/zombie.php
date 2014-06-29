@@ -26,8 +26,8 @@ class zombie extends Position implements ProjectileSource{
 		$pk->eid = $this->eid;
 		$pk->type = 32;
 		$pk->x = $player1->getX()+1;
-		$pk->y = $this->getY();
-		$pk->z = $this->getZ();
+		$pk->y = $player1->getY();
+		$pk->z = $player1->getZ();
 		$pk->yaw = $this->yaw;
 		$pk->pitch = $this->pitch;
 		$pk->metadata = $this->getMetadata();
@@ -37,8 +37,8 @@ class zombie extends Position implements ProjectileSource{
 		$pk->eid = $this->eid;
 		$pk->type = 32;
 		$pk->x = $player1->getX()-1;
-		$pk->y = $this->getY();
-		$pk->z = $this->getZ();
+		$pk->y = $player1->getY();
+		$pk->z = $player1->getZ();
 		$pk->yaw = $this->yaw;
 		$pk->pitch = $this->pitch;
 		$pk->metadata = $this->getMetadata();
