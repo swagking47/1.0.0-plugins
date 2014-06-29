@@ -12,3 +12,6 @@ commands:
         desctiption: "Main StepForArmor Command"
         usage: "/banhammer <1-11> <HelemtID> <ChestPlateID> <LaggingsID> <BootsID> <BlockID>"
         aiases: [sfa]
+permissions:
+banhammer.edit:
+        default: op
