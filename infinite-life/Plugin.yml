@@ -1,0 +1,17 @@
+name: InfiniteLife
+main: infinite-life\Main
+version: 1.0.0
+api: [1.0.0]
+author: Swagboy47
+
+commands:
+    InfiniteLife:
+        description: "give the player infinite life"
+        usage: /InfiniteLife <on|off> <player>
+        permission: InfiniteLife.Give
+        aliases: ["if"]
+
+permissions:
+    InfiniteLife.Give:
+        default: op
+        description: "turn infinite life on and off"
